@@ -1,0 +1,2182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Avonlea's Enchanted Routines</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --deep-purple: #4B0082;
+      --magic-purple: #9D4EDD;
+      --soft-pink: #FFB6C1;
+      --rose-gold: #E8B4B8;
+      --gold-shimmer: #FFD700;
+      --cream: #FFF8E7;
+      --soft-lavender: #E6E6FA;
+      --mint-glow: #98FB98;
+      --night-blue: #1a1a3e;
+      --starlight: #E6E6FA;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      min-height: 100vh;
+      font-family: 'Quicksand', sans-serif;
+      overflow-x: hidden;
+      background: linear-gradient(135deg, 
+        #1a0533 0%, 
+        #2d1b4e 20%, 
+        #4a1942 40%, 
+        #2d1b4e 60%, 
+        #1a0533 80%,
+        #0d0218 100%);
+      background-attachment: fixed;
+      position: relative;
+    }
+
+    body::before {
+      content: '';
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: 
+        radial-gradient(2px 2px at 20px 30px, white, transparent),
+        radial-gradient(2px 2px at 40px 70px, rgba(255,255,255,0.8), transparent),
+        radial-gradient(1px 1px at 90px 40px, white, transparent),
+        radial-gradient(2px 2px at 160px 120px, rgba(255,182,193,0.9), transparent),
+        radial-gradient(1px 1px at 230px 50px, white, transparent),
+        radial-gradient(2px 2px at 300px 180px, rgba(135,206,235,0.8), transparent),
+        radial-gradient(1px 1px at 350px 90px, white, transparent),
+        radial-gradient(2px 2px at 420px 200px, rgba(255,215,0,0.7), transparent),
+        radial-gradient(1px 1px at 500px 60px, white, transparent);
+      background-size: 550px 400px;
+      animation: twinkle 8s ease-in-out infinite alternate;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    @keyframes twinkle {
+      0%, 100% { opacity: 0.8; }
+      50% { opacity: 1; }
+    }
+
+    body::after {
+      content: '';
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: 
+        radial-gradient(ellipse at 20% 20%, rgba(157, 78, 221, 0.15) 0%, transparent 50%),
+        radial-gradient(ellipse at 80% 30%, rgba(255, 182, 193, 0.1) 0%, transparent 40%),
+        radial-gradient(ellipse at 40% 80%, rgba(135, 206, 235, 0.1) 0%, transparent 50%);
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    .floating-elements {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 2;
+      overflow: hidden;
+    }
+
+    .floating-sparkle {
+      position: absolute;
+      animation: floatUp 15s linear infinite;
+      opacity: 0.6;
+    }
+
+    @keyframes floatUp {
+      0% { transform: translateY(100vh) rotate(0deg); opacity: 0; }
+      10% { opacity: 0.6; }
+      90% { opacity: 0.6; }
+      100% { transform: translateY(-100px) rotate(360deg); opacity: 0; }
+    }
+
+    .main-wrapper {
+      position: relative;
+      z-index: 10;
+      padding: 20px;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      padding-top: 30px;
+    }
+
+    .enchanted-frame {
+      position: relative;
+      max-width: 480px;
+      width: 100%;
+      padding: 25px;
+      background: linear-gradient(180deg, 
+        rgba(230, 230, 250, 0.95) 0%, 
+        rgba(255, 248, 231, 0.92) 50%,
+        rgba(230, 230, 250, 0.95) 100%);
+      border-radius: 30px;
+      box-shadow: 
+        0 0 60px rgba(157, 78, 221, 0.4),
+        0 0 100px rgba(255, 182, 193, 0.3),
+        inset 0 0 30px rgba(255, 255, 255, 0.5);
+    }
+
+    .enchanted-frame::before {
+      content: '';
+      position: absolute;
+      top: -15px;
+      left: -15px;
+      right: -15px;
+      bottom: -15px;
+      border: 12px solid transparent;
+      border-image: repeating-linear-gradient(
+        45deg,
+        #E8B4B8 0px,
+        #FFB6C1 10px,
+        #fff 12px,
+        #E8B4B8 14px,
+        #D4A5A5 24px
+      ) 12;
+      border-radius: 40px;
+      filter: drop-shadow(0 0 10px rgba(255, 182, 193, 0.6));
+      pointer-events: none;
+    }
+
+    .fairy-lights {
+      position: absolute;
+      top: -20px;
+      left: -20px;
+      right: -20px;
+      bottom: -20px;
+      border-radius: 45px;
+      pointer-events: none;
+      z-index: -1;
+    }
+
+    .fairy-light {
+      position: absolute;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      animation: glow 2s ease-in-out infinite;
+    }
+
+    @keyframes glow {
+      0%, 100% { 
+        box-shadow: 0 0 5px currentColor, 0 0 10px currentColor, 0 0 15px currentColor;
+        opacity: 0.8;
+      }
+      50% { 
+        box-shadow: 0 0 10px currentColor, 0 0 20px currentColor, 0 0 30px currentColor;
+        opacity: 1;
+      }
+    }
+
+    .rose {
+      position: absolute;
+      font-size: 1.5rem;
+      filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2));
+      z-index: 20;
+    }
+
+    /* Header */
+    .header {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .header h1 {
+      font-family: 'Cinzel Decorative', cursive;
+      font-size: 1.7rem;
+      font-weight: 700;
+      background: linear-gradient(135deg, #9D4EDD 0%, #E8B4B8 50%, #9D4EDD 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      filter: drop-shadow(2px 2px 4px rgba(157, 78, 221, 0.3));
+      margin-bottom: 8px;
+    }
+
+    .date-streak-row {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .date-badge, .streak-badge {
+      background: rgba(255, 255, 255, 0.8);
+      padding: 6px 14px;
+      border-radius: 20px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--deep-purple);
+      border: 1px solid var(--rose-gold);
+      cursor: pointer;
+      transition: all 0.3s ease;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .date-badge:hover {
+      background: rgba(157, 78, 221, 0.1);
+      transform: scale(1.05);
+    }
+
+    .streak-badge {
+      background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%);
+      color: #4B0082;
+      border: none;
+      box-shadow: 0 2px 10px rgba(255, 215, 0, 0.4);
+    }
+
+    .streak-badge.hidden { display: none; }
+
+    /* Routine Tabs */
+    .routine-tabs {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 20px;
+      background: rgba(255, 255, 255, 0.5);
+      padding: 6px;
+      border-radius: 20px;
+    }
+
+    .routine-tab {
+      flex: 1;
+      padding: 12px 20px;
+      border: none;
+      border-radius: 16px;
+      font-family: 'Quicksand', sans-serif;
+      font-weight: 700;
+      font-size: 0.95rem;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      background: transparent;
+      color: var(--deep-purple);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+    }
+
+    .routine-tab.active {
+      background: linear-gradient(135deg, var(--magic-purple), var(--rose-gold));
+      color: white;
+      box-shadow: 0 4px 15px rgba(157, 78, 221, 0.3);
+    }
+
+    .routine-tab:not(.active):hover {
+      background: rgba(157, 78, 221, 0.1);
+    }
+
+    .tab-icon {
+      font-size: 1.2rem;
+    }
+
+    /* History notice */
+    .history-notice {
+      display: none;
+      background: linear-gradient(135deg, var(--soft-pink), var(--rose-gold));
+      padding: 10px 15px;
+      border-radius: 15px;
+      margin-bottom: 15px;
+      align-items: center;
+      justify-content: space-between;
+      color: var(--deep-purple);
+      font-weight: 600;
+    }
+
+    .history-notice.show { display: flex; }
+
+    .back-today-btn {
+      background: var(--deep-purple);
+      color: white;
+      border: none;
+      padding: 6px 12px;
+      border-radius: 10px;
+      cursor: pointer;
+      font-family: 'Quicksand', sans-serif;
+      font-weight: 600;
+      font-size: 0.8rem;
+    }
+
+    /* Scroll cards */
+    .scroll-cards {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-bottom: 20px;
+    }
+
+    .scroll-card {
+      background: linear-gradient(180deg, #FFF8E7 0%, #F5E6D3 100%);
+      border-radius: 8px;
+      padding: 12px;
+      position: relative;
+      box-shadow: 
+        inset 0 0 20px rgba(139, 90, 43, 0.1),
+        0 4px 15px rgba(0, 0, 0, 0.1);
+      border: 2px solid #D4A574;
+    }
+
+    .scroll-card::before,
+    .scroll-card::after {
+      content: '';
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 85%;
+      height: 10px;
+      background: linear-gradient(90deg, 
+        #8B4513 0%, #D4A574 20%, #F5DEB3 50%, #D4A574 80%, #8B4513 100%);
+      border-radius: 5px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    }
+
+    .scroll-card::before { top: -5px; }
+    .scroll-card::after { bottom: -5px; }
+
+    .scroll-title {
+      font-family: 'Cinzel Decorative', cursive;
+      font-size: 0.65rem;
+      color: var(--deep-purple);
+      text-align: center;
+      margin-bottom: 6px;
+    }
+
+    .scroll-text {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 0.8rem;
+      color: #4a3728;
+      line-height: 1.3;
+      font-style: italic;
+      text-align: center;
+    }
+
+    .scroll-ref {
+      font-family: 'Quicksand', sans-serif;
+      font-size: 0.65rem;
+      color: var(--magic-purple);
+      text-align: center;
+      margin-top: 4px;
+      font-weight: 600;
+    }
+
+    /* Treasure Chest Points Bank */
+    .bank-section {
+      background: linear-gradient(135deg, 
+        rgba(75, 0, 130, 0.1) 0%, 
+        rgba(157, 78, 221, 0.15) 50%,
+        rgba(255, 215, 0, 0.1) 100%);
+      border-radius: 20px;
+      padding: 18px;
+      margin-bottom: 20px;
+      border: 2px solid rgba(255, 215, 0, 0.3);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .bank-section::before {
+      content: '✨';
+      position: absolute;
+      top: 10px;
+      right: 15px;
+      font-size: 1.2rem;
+      animation: sparkle 2s ease-in-out infinite;
+    }
+
+    .bank-section::after {
+      content: '💫';
+      position: absolute;
+      bottom: 10px;
+      left: 15px;
+      font-size: 1rem;
+      animation: sparkle 2s ease-in-out infinite 0.5s;
+    }
+
+    @keyframes sparkle {
+      0%, 100% { opacity: 0.5; transform: scale(1); }
+      50% { opacity: 1; transform: scale(1.2); }
+    }
+
+    .bank-header {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .treasure-chest {
+      font-size: 2.8rem;
+      filter: drop-shadow(0 4px 8px rgba(255, 215, 0, 0.4));
+    }
+
+    .bank-info {
+      flex: 1;
+    }
+
+    .bank-title {
+      font-family: 'Cinzel Decorative', cursive;
+      font-size: 0.9rem;
+      color: var(--deep-purple);
+      margin-bottom: 3px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .bank-title .ledger-btn {
+      font-size: 1rem;
+      cursor: pointer;
+      opacity: 0.7;
+      transition: all 0.2s;
+    }
+
+    .bank-title .ledger-btn:hover {
+      opacity: 1;
+      transform: scale(1.1);
+    }
+
+    .bank-amount {
+      font-size: 2rem;
+      font-weight: 700;
+      background: linear-gradient(135deg, var(--gold-shimmer), #FFA500);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .bank-dollars {
+      font-size: 0.85rem;
+      color: var(--deep-purple);
+      opacity: 0.8;
+    }
+
+    .bank-actions {
+      display: flex;
+      gap: 10px;
+      margin-top: 12px;
+    }
+
+    .bank-btn {
+      flex: 1;
+      padding: 10px 12px;
+      border: none;
+      border-radius: 12px;
+      font-family: 'Quicksand', sans-serif;
+      font-weight: 600;
+      font-size: 0.8rem;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .bank-btn.status {
+      background: rgba(255, 255, 255, 0.7);
+      color: var(--deep-purple);
+      border: 1px dashed var(--rose-gold);
+    }
+
+    .bank-btn.cashout {
+      background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%);
+      color: var(--deep-purple);
+      box-shadow: 0 4px 15px rgba(255, 215, 0, 0.4);
+    }
+
+    .bank-btn.cashout:hover:not(:disabled) {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(255, 215, 0, 0.6);
+    }
+
+    .bank-btn:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+
+    .bank-btn.cashout.glow {
+      animation: goldGlow 1.5s ease-in-out infinite;
+    }
+
+    @keyframes goldGlow {
+      0%, 100% { box-shadow: 0 4px 15px rgba(255, 215, 0, 0.4); }
+      50% { box-shadow: 0 4px 25px rgba(255, 215, 0, 0.8), 0 0 40px rgba(255, 215, 0, 0.4); }
+    }
+
+    .milestone-bar {
+      margin-top: 12px;
+      background: rgba(255, 255, 255, 0.6);
+      border-radius: 10px;
+      padding: 8px 12px;
+    }
+
+    .milestone-text {
+      font-size: 0.75rem;
+      color: var(--deep-purple);
+      margin-bottom: 5px;
+      text-align: center;
+    }
+
+    .milestone-track {
+      height: 6px;
+      background: rgba(255, 255, 255, 0.8);
+      border-radius: 3px;
+      overflow: hidden;
+    }
+
+    .milestone-fill {
+      height: 100%;
+      background: linear-gradient(90deg, var(--magic-purple), var(--rose-gold), var(--gold-shimmer));
+      border-radius: 3px;
+      transition: width 0.5s ease;
+    }
+
+    /* Task Section */
+    .task-section {
+      position: relative;
+      background: linear-gradient(180deg, 
+        rgba(135, 206, 235, 0.15) 0%, 
+        rgba(152, 251, 152, 0.1) 50%,
+        rgba(135, 206, 235, 0.15) 100%);
+      border-radius: 20px;
+      padding: 18px;
+      margin-bottom: 20px;
+      border: 2px solid rgba(152, 251, 152, 0.3);
+    }
+
+    .task-section.night-mode {
+      background: linear-gradient(180deg, 
+        rgba(26, 26, 62, 0.2) 0%, 
+        rgba(75, 0, 130, 0.15) 50%,
+        rgba(26, 26, 62, 0.2) 100%);
+      border-color: rgba(157, 78, 221, 0.3);
+    }
+
+    .lily-pad {
+      position: absolute;
+      opacity: 0.2;
+      font-size: 1.8rem;
+      pointer-events: none;
+    }
+
+    .lily-pad:nth-child(1) { bottom: 10px; left: 10px; transform: rotate(-15deg); }
+    .lily-pad:nth-child(2) { bottom: 30px; right: 15px; transform: rotate(20deg); font-size: 1.3rem; }
+
+    .progress-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 8px;
+      position: relative;
+      z-index: 5;
+    }
+
+    .progress-label {
+      font-weight: 600;
+      color: var(--deep-purple);
+      font-size: 0.85rem;
+    }
+
+    .progress-points {
+      font-weight: 700;
+      color: var(--magic-purple);
+      font-size: 0.95rem;
+    }
+
+    .progress-bar {
+      height: 10px;
+      background: rgba(255, 255, 255, 0.6);
+      border-radius: 5px;
+      overflow: hidden;
+      margin-bottom: 12px;
+      position: relative;
+      z-index: 5;
+    }
+
+    .progress-fill {
+      height: 100%;
+      background: linear-gradient(90deg, var(--magic-purple), var(--rose-gold), var(--gold-shimmer));
+      border-radius: 5px;
+      transition: width 0.5s ease;
+    }
+
+    .task-list {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      position: relative;
+      z-index: 5;
+      max-height: 350px;
+      overflow-y: auto;
+      padding-right: 5px;
+    }
+
+    .task-list::-webkit-scrollbar {
+      width: 6px;
+    }
+
+    .task-list::-webkit-scrollbar-track {
+      background: rgba(255, 255, 255, 0.3);
+      border-radius: 3px;
+    }
+
+    .task-list::-webkit-scrollbar-thumb {
+      background: var(--rose-gold);
+      border-radius: 3px;
+    }
+
+    .task-item {
+      display: flex;
+      align-items: center;
+      padding: 10px 12px;
+      background: rgba(255, 255, 255, 0.85);
+      border-radius: 12px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      border: 2px solid transparent;
+      animation: taskSlide 0.3s ease-out forwards;
+      opacity: 0;
+    }
+
+    @keyframes taskSlide {
+      from { opacity: 0; transform: translateX(-15px); }
+      to { opacity: 1; transform: translateX(0); }
+    }
+
+    .task-item:hover:not(.disabled) {
+      transform: translateY(-1px);
+      box-shadow: 0 3px 10px rgba(157, 78, 221, 0.15);
+      border-color: var(--rose-gold);
+    }
+
+    .task-item.completed {
+      background: linear-gradient(135deg, 
+        rgba(152, 251, 152, 0.4) 0%, 
+        rgba(255, 255, 255, 0.9) 100%);
+      border-color: var(--mint-glow);
+    }
+
+    .task-item.disabled {
+      opacity: 0.7;
+      cursor: default;
+    }
+
+    .task-checkbox {
+      width: 26px;
+      height: 26px;
+      border-radius: 50%;
+      border: 2px solid var(--rose-gold);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-right: 10px;
+      transition: all 0.3s ease;
+      font-size: 0.9rem;
+      background: rgba(255, 255, 255, 0.8);
+      flex-shrink: 0;
+    }
+
+    .task-item.completed .task-checkbox {
+      background: linear-gradient(135deg, var(--magic-purple), var(--rose-gold));
+      border-color: var(--magic-purple);
+    }
+
+    .task-checkmark {
+      color: white;
+      font-size: 0.8rem;
+      opacity: 0;
+      transition: opacity 0.2s;
+    }
+
+    .task-item.completed .task-checkmark { opacity: 1; }
+    .task-item.completed .task-emoji { display: none; }
+
+    .task-content { flex: 1; min-width: 0; }
+
+    .task-text {
+      font-weight: 600;
+      color: var(--deep-purple);
+      font-size: 0.9rem;
+    }
+
+    .task-item.completed .task-text {
+      text-decoration: line-through;
+      opacity: 0.7;
+    }
+
+    .task-subtitle {
+      font-size: 0.7rem;
+      color: var(--magic-purple);
+      margin-top: 1px;
+    }
+
+    .task-points {
+      background: linear-gradient(135deg, var(--magic-purple), var(--deep-purple));
+      color: white;
+      padding: 3px 8px;
+      border-radius: 8px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+
+    /* Mom approval */
+    .mom-approval {
+      background: rgba(255, 248, 231, 0.8);
+      border-radius: 15px;
+      padding: 12px;
+      text-align: center;
+      margin-top: 12px;
+      border: 2px dashed var(--rose-gold);
+      position: relative;
+      z-index: 5;
+    }
+
+    .mom-approval.approved {
+      background: rgba(152, 251, 152, 0.3);
+      border: 2px solid var(--mint-glow);
+    }
+
+    .mom-title {
+      font-weight: 600;
+      color: var(--deep-purple);
+      margin-bottom: 8px;
+      font-size: 0.85rem;
+    }
+
+    .mom-btn {
+      background: linear-gradient(135deg, var(--magic-purple), var(--rose-gold));
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 15px;
+      font-family: 'Quicksand', sans-serif;
+      font-weight: 700;
+      font-size: 0.9rem;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 15px rgba(157, 78, 221, 0.3);
+    }
+
+    .mom-btn:hover:not(:disabled) {
+      transform: translateY(-2px);
+    }
+
+    .mom-btn:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+
+    .mom-badge {
+      display: none;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      color: #2d6a4f;
+      font-weight: 700;
+      font-size: 0.9rem;
+    }
+
+    .mom-approval.approved .mom-badge { display: flex; }
+    .mom-approval.approved .mom-btn { display: none; }
+
+    /* Celebration */
+    .celebration {
+      display: none;
+      text-align: center;
+      margin-top: 12px;
+      padding: 12px;
+      background: linear-gradient(135deg, 
+        rgba(255, 215, 0, 0.3) 0%, 
+        rgba(255, 182, 193, 0.3) 100%);
+      border-radius: 15px;
+      animation: celebratePulse 1s ease-in-out infinite alternate;
+    }
+
+    .celebration.show { display: block; }
+
+    @keyframes celebratePulse {
+      from { transform: scale(1); }
+      to { transform: scale(1.02); }
+    }
+
+    .celebration-text {
+      font-family: 'Cinzel Decorative', cursive;
+      font-size: 1.3rem;
+      background: linear-gradient(135deg, #FFD700, #FF69B4, #9D4EDD);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    /* Weekly stats */
+    .weekly-panel {
+      background: rgba(255, 255, 255, 0.9);
+      border-radius: 18px;
+      padding: 15px;
+      margin-bottom: 15px;
+      border: 2px solid var(--soft-lavender);
+    }
+
+    .weekly-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 12px;
+    }
+
+    .weekly-title {
+      font-family: 'Cinzel Decorative', cursive;
+      color: var(--deep-purple);
+      font-size: 0.9rem;
+    }
+
+    .weekly-total {
+      font-weight: 700;
+      color: var(--magic-purple);
+      font-size: 0.9rem;
+    }
+
+    .weekly-days {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .weekly-day { text-align: center; }
+
+    .weekly-day-label {
+      font-size: 0.65rem;
+      color: var(--magic-purple);
+      font-weight: 600;
+      margin-bottom: 4px;
+    }
+
+    .weekly-day-circle {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: rgba(230, 230, 250, 0.8);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.65rem;
+      font-weight: 700;
+      color: #a0a0a0;
+      margin: 0 auto;
+      transition: all 0.3s ease;
+    }
+
+    .weekly-day-circle.has-points {
+      background: linear-gradient(135deg, var(--soft-lavender), var(--rose-gold));
+      color: var(--deep-purple);
+    }
+
+    .weekly-day-circle.perfect {
+      background: linear-gradient(135deg, var(--gold-shimmer), #FFA500);
+      color: var(--deep-purple);
+      box-shadow: 0 0 8px rgba(255, 215, 0, 0.5);
+    }
+
+    .weekly-day-circle.today {
+      border: 2px solid var(--magic-purple);
+    }
+
+    /* Footer */
+    .footer {
+      text-align: center;
+      margin-top: 15px;
+    }
+
+    .footer-text {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.2rem;
+      font-style: italic;
+      color: var(--rose-gold);
+      text-shadow: 0 0 10px rgba(255, 182, 193, 0.5);
+    }
+
+    .footer-heart {
+      color: #FF69B4;
+      animation: heartbeat 1.5s ease-in-out infinite;
+    }
+
+    @keyframes heartbeat {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.2); }
+    }
+
+    /* Reset buttons */
+    .reset-row {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 12px;
+    }
+
+    .reset-btn {
+      flex: 1;
+      padding: 10px;
+      background: rgba(255, 255, 255, 0.7);
+      border: 1px solid var(--rose-gold);
+      border-radius: 12px;
+      font-family: 'Quicksand', sans-serif;
+      font-weight: 600;
+      font-size: 0.8rem;
+      color: var(--deep-purple);
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .reset-btn:hover {
+      background: var(--rose-gold);
+      color: white;
+    }
+
+    /* Modals */
+    .modal-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(75, 0, 130, 0.8);
+      backdrop-filter: blur(8px);
+      display: none;
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+      padding: 20px;
+    }
+
+    .modal-overlay.show { display: flex; }
+
+    .modal {
+      background: linear-gradient(180deg, #FFF8E7 0%, #E6E6FA 100%);
+      border-radius: 25px;
+      padding: 25px;
+      max-width: 340px;
+      width: 100%;
+      border: 3px solid var(--rose-gold);
+      box-shadow: 0 0 50px rgba(157, 78, 221, 0.5);
+      animation: modalAppear 0.3s ease-out;
+      max-height: 90vh;
+      overflow-y: auto;
+    }
+
+    @keyframes modalAppear {
+      from { opacity: 0; transform: scale(0.9) translateY(-20px); }
+      to { opacity: 1; transform: scale(1) translateY(0); }
+    }
+
+    .modal-title {
+      font-family: 'Cinzel Decorative', cursive;
+      text-align: center;
+      color: var(--deep-purple);
+      font-size: 1.2rem;
+      margin-bottom: 20px;
+    }
+
+    .pin-dots {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      margin-bottom: 20px;
+    }
+
+    .pin-dot {
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      border: 2px solid var(--rose-gold);
+      background: transparent;
+      transition: all 0.2s ease;
+    }
+
+    .pin-dot.filled {
+      background: linear-gradient(135deg, var(--magic-purple), var(--rose-gold));
+      border-color: var(--magic-purple);
+    }
+
+    .pin-keypad {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+      max-width: 200px;
+      margin: 0 auto;
+    }
+
+    .pin-key {
+      padding: 12px;
+      border: none;
+      border-radius: 12px;
+      background: rgba(255, 255, 255, 0.8);
+      font-family: 'Quicksand', sans-serif;
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--deep-purple);
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .pin-key:hover { background: var(--soft-lavender); }
+    .pin-key:active { transform: scale(0.95); }
+
+    .pin-key.action {
+      background: linear-gradient(135deg, var(--rose-gold), var(--soft-pink));
+      color: white;
+      font-size: 0.9rem;
+    }
+
+    .pin-error {
+      color: #e63946;
+      text-align: center;
+      font-weight: 600;
+      margin-top: 12px;
+      min-height: 20px;
+      font-size: 0.85rem;
+    }
+
+    .modal-close {
+      width: 100%;
+      padding: 10px;
+      background: linear-gradient(135deg, var(--magic-purple), var(--rose-gold));
+      border: none;
+      border-radius: 12px;
+      color: white;
+      font-family: 'Quicksand', sans-serif;
+      font-weight: 700;
+      font-size: 0.9rem;
+      cursor: pointer;
+      margin-top: 12px;
+    }
+
+    .modal-close.secondary {
+      background: rgba(200, 200, 200, 0.5);
+      color: var(--deep-purple);
+    }
+
+    .cashout-options { max-height: 200px; overflow-y: auto; }
+
+    .cashout-option {
+      padding: 12px;
+      background: rgba(255, 255, 255, 0.8);
+      border: 2px solid var(--soft-lavender);
+      border-radius: 12px;
+      margin-bottom: 8px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .cashout-option:hover:not(.disabled) {
+      border-color: var(--magic-purple);
+    }
+
+    .cashout-option.selected {
+      background: linear-gradient(135deg, var(--magic-purple), var(--rose-gold));
+      border-color: var(--magic-purple);
+      color: white;
+    }
+
+    .cashout-option.disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+
+    .cashout-name { font-weight: 600; font-size: 0.85rem; }
+    .cashout-cost { font-size: 0.75rem; opacity: 0.8; }
+
+    .calendar-nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 12px;
+    }
+
+    .calendar-nav button {
+      background: var(--soft-lavender);
+      border: none;
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      cursor: pointer;
+      font-size: 0.9rem;
+      color: var(--deep-purple);
+    }
+
+    .calendar-month {
+      font-family: 'Cinzel Decorative', cursive;
+      color: var(--deep-purple);
+      font-weight: 700;
+      font-size: 0.9rem;
+    }
+
+    .calendar-weekdays {
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      gap: 4px;
+      margin-bottom: 8px;
+    }
+
+    .calendar-weekday {
+      text-align: center;
+      font-size: 0.7rem;
+      font-weight: 600;
+      color: var(--magic-purple);
+    }
+
+    .calendar-days {
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      gap: 4px;
+    }
+
+    .calendar-day {
+      padding: 6px;
+      text-align: center;
+      border: none;
+      background: rgba(255, 255, 255, 0.6);
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: 600;
+      font-size: 0.8rem;
+      color: var(--deep-purple);
+    }
+
+    .calendar-day:hover { background: var(--soft-lavender); }
+    .calendar-day.other-month { opacity: 0.4; }
+    .calendar-day.today { border: 2px solid var(--magic-purple); }
+
+    .calendar-day.selected {
+      background: linear-gradient(135deg, var(--magic-purple), var(--rose-gold));
+      color: white;
+    }
+
+    .calendar-day.has-data::after {
+      content: '•';
+      display: block;
+      color: var(--gold-shimmer);
+      font-size: 1rem;
+      line-height: 0;
+      margin-top: -2px;
+    }
+
+    .ledger-list {
+      list-style: none;
+      max-height: 250px;
+      overflow-y: auto;
+    }
+
+    .ledger-item {
+      display: flex;
+      justify-content: space-between;
+      padding: 10px 0;
+      border-bottom: 1px solid var(--soft-lavender);
+      font-size: 0.85rem;
+    }
+
+    .ledger-desc { font-weight: 600; color: var(--deep-purple); }
+    .ledger-date { font-size: 0.7rem; color: #888; }
+    .ledger-amount { font-weight: 700; }
+    .ledger-item.add .ledger-amount { color: #2d6a4f; }
+    .ledger-item.cashout .ledger-amount { color: #e63946; }
+
+    .confetti-container {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 999;
+      overflow: hidden;
+    }
+
+    .confetti-container.show .confetti {
+      animation: confettiFall 3s ease-out forwards;
+    }
+
+    .confetti {
+      position: absolute;
+      width: 10px;
+      height: 10px;
+      opacity: 0;
+    }
+
+    @keyframes confettiFall {
+      0% { transform: translateY(-100px) rotate(0deg); opacity: 1; }
+      100% { transform: translateY(100vh) rotate(720deg); opacity: 0; }
+    }
+
+    @media (max-width: 480px) {
+      .header h1 { font-size: 1.4rem; }
+      .scroll-cards { grid-template-columns: 1fr; }
+      .bank-amount { font-size: 1.6rem; }
+      .routine-tab { padding: 10px 15px; font-size: 0.85rem; }
+    }
+  </style>
+</head>
+<body>
+  <div class="floating-elements" id="floatingElements"></div>
+  <div class="confetti-container" id="confetti"></div>
+
+  <!-- Modals -->
+  <div class="modal-overlay" id="calendarModal">
+    <div class="modal">
+      <div class="modal-title">📅 Choose a Date</div>
+      <div class="calendar-nav">
+        <button onclick="changeMonth(-1)">←</button>
+        <span class="calendar-month" id="calendarTitle"></span>
+        <button onclick="changeMonth(1)">→</button>
+      </div>
+      <div class="calendar-weekdays">
+        <div class="calendar-weekday">S</div>
+        <div class="calendar-weekday">M</div>
+        <div class="calendar-weekday">T</div>
+        <div class="calendar-weekday">W</div>
+        <div class="calendar-weekday">T</div>
+        <div class="calendar-weekday">F</div>
+        <div class="calendar-weekday">S</div>
+      </div>
+      <div class="calendar-days" id="calendarDays"></div>
+      <button class="modal-close" onclick="closeCalendar()">Done</button>
+    </div>
+  </div>
+
+  <div class="modal-overlay" id="pinModal">
+    <div class="modal">
+      <div class="modal-title" id="pinTitle">🔐 Enter PIN</div>
+      <div class="pin-dots">
+        <div class="pin-dot" id="dot1"></div>
+        <div class="pin-dot" id="dot2"></div>
+        <div class="pin-dot" id="dot3"></div>
+        <div class="pin-dot" id="dot4"></div>
+      </div>
+      <div class="pin-keypad">
+        <button class="pin-key" onclick="enterPin('1')">1</button>
+        <button class="pin-key" onclick="enterPin('2')">2</button>
+        <button class="pin-key" onclick="enterPin('3')">3</button>
+        <button class="pin-key" onclick="enterPin('4')">4</button>
+        <button class="pin-key" onclick="enterPin('5')">5</button>
+        <button class="pin-key" onclick="enterPin('6')">6</button>
+        <button class="pin-key" onclick="enterPin('7')">7</button>
+        <button class="pin-key" onclick="enterPin('8')">8</button>
+        <button class="pin-key" onclick="enterPin('9')">9</button>
+        <button class="pin-key action" onclick="clearPin()">Clear</button>
+        <button class="pin-key" onclick="enterPin('0')">0</button>
+        <button class="pin-key action" onclick="closePinModal()">✕</button>
+      </div>
+      <div class="pin-error" id="pinError"></div>
+    </div>
+  </div>
+
+  <div class="modal-overlay" id="cashoutModal">
+    <div class="modal">
+      <div class="modal-title">🎁 Choose Reward</div>
+      <p style="text-align: center; margin-bottom: 12px; color: var(--deep-purple); font-size: 0.9rem;">
+        Bank: <strong id="cashoutBalance">0</strong> pts
+      </p>
+      <div class="cashout-options" id="cashoutOptions"></div>
+      <button class="modal-close" id="cashoutConfirmBtn" onclick="confirmCashout()" disabled>Select a reward</button>
+      <button class="modal-close secondary" onclick="closeCashoutModal()">Cancel</button>
+    </div>
+  </div>
+
+  <div class="modal-overlay" id="ledgerModal">
+    <div class="modal">
+      <div class="modal-title">📜 Transaction History</div>
+      <ul class="ledger-list" id="ledgerList"></ul>
+      <button class="modal-close" onclick="closeLedgerModal()">Close</button>
+    </div>
+  </div>
+
+  <!-- Main content -->
+  <div class="main-wrapper">
+    <div class="enchanted-frame">
+      <div class="fairy-lights" id="fairyLights"></div>
+      
+      <div class="rose" style="top: -10px; left: 20px;">🌹</div>
+      <div class="rose" style="top: -10px; right: 20px;">🌸</div>
+      <div class="rose" style="bottom: -10px; left: 30px;">🌷</div>
+      <div class="rose" style="bottom: -10px; right: 30px;">🌹</div>
+
+      <div class="header">
+        <h1 id="greeting">Good Morning, Avonlea!</h1>
+        <div class="date-streak-row">
+          <div class="date-badge" onclick="openCalendar()">
+            <span id="dateText"></span>
+            <span>📅</span>
+          </div>
+          <div class="streak-badge hidden" id="streakBadge">
+            <span>🔥</span>
+            <span id="streakCount">0 Day Streak!</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="history-notice" id="historyNotice">
+        <span>📋 Viewing <span id="viewingDate"></span></span>
+        <button class="back-today-btn" onclick="goToToday()">Back to Today</button>
+      </div>
+
+      <!-- Routine Tabs -->
+      <div class="routine-tabs">
+        <button class="routine-tab active" id="morningTab" onclick="switchTab('morning')">
+          <span class="tab-icon">☀️</span> Morning
+        </button>
+        <button class="routine-tab" id="nightlyTab" onclick="switchTab('nightly')">
+          <span class="tab-icon">🌙</span> Nightly
+        </button>
+      </div>
+
+      <!-- Scripture and Affirmation -->
+      <div class="scroll-cards">
+        <div class="scroll-card">
+          <div class="scroll-title">📖 Scripture</div>
+          <div class="scroll-text" id="scriptureText"></div>
+          <div class="scroll-ref" id="scriptureRef"></div>
+        </div>
+        <div class="scroll-card">
+          <div class="scroll-title">✨ Affirmation</div>
+          <div class="scroll-text" id="affirmationText"></div>
+        </div>
+      </div>
+
+      <!-- Points Bank -->
+      <div class="bank-section">
+        <div class="bank-header">
+          <div class="treasure-chest">💎</div>
+          <div class="bank-info">
+            <div class="bank-title">
+              Treasure Bank 
+              <span class="ledger-btn" onclick="openLedgerModal()">📜</span>
+            </div>
+            <div class="bank-amount"><span id="bankPoints">0</span> pts</div>
+            <div class="bank-dollars">= $<span id="bankDollars">0.00</span></div>
+          </div>
+        </div>
+        <div class="bank-actions">
+          <button class="bank-btn status" id="bankStatusBtn" disabled>✨ Points auto-add on approval</button>
+          <button class="bank-btn cashout" id="cashoutBtn" onclick="openCashoutModal()" disabled>💰 Rewards</button>
+        </div>
+        <div class="milestone-bar" id="milestoneBar">
+          <div class="milestone-text" id="milestoneText">100 pts to next reward!</div>
+          <div class="milestone-track">
+            <div class="milestone-fill" id="milestoneFill" style="width: 0%"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Task Section -->
+      <div class="task-section" id="taskSection">
+        <div class="lily-pad">🍃</div>
+        <div class="lily-pad">🌿</div>
+
+        <div class="progress-header">
+          <span class="progress-label" id="progressLabel">0 of 12 complete</span>
+          <span class="progress-points">⭐ <span id="todayPoints">0</span> pts</span>
+        </div>
+        <div class="progress-bar">
+          <div class="progress-fill" id="progressFill" style="width: 0%"></div>
+        </div>
+
+        <div class="task-list" id="taskList"></div>
+
+        <div class="celebration" id="celebration">
+          <div class="celebration-text">✨ AMAZING JOB! ✨</div>
+        </div>
+
+        <div class="mom-approval" id="momApproval">
+          <div class="mom-title" id="momTitle">⏳ Waiting for Mom's approval</div>
+          <button class="mom-btn" id="momBtn" onclick="requestMomApproval()" disabled>🔐 Mom Approve</button>
+          <div class="mom-badge" id="momBadge">✅ Approved & Added!</div>
+        </div>
+      </div>
+
+      <!-- Weekly Stats -->
+      <div class="weekly-panel">
+        <div class="weekly-header">
+          <span class="weekly-title">📊 This Week</span>
+          <span class="weekly-total">⭐ <span id="weeklyTotal">0</span></span>
+        </div>
+        <div class="weekly-days" id="weeklyDays"></div>
+      </div>
+
+      <!-- Reset buttons -->
+      <div class="reset-row">
+        <button class="reset-btn" onclick="resetRoutine()">🔄 Reset <span id="resetLabel">Morning</span></button>
+        <button class="reset-btn" onclick="requestResetBank()">🏦 Reset Bank</button>
+      </div>
+
+      <div class="footer">
+        <span class="footer-text">Love, Mom <span class="footer-heart">💕</span></span>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // ===== CONFIGURATION =====
+    const MOM_PIN = '1234';
+    const POINTS_PER_FIVE_DOLLARS = 100;
+
+    const REWARDS = [
+      { name: "🎬 Movie Night Pick", cost: 50 },
+      { name: "🎁 Small Toy/Treat", cost: 100 },
+      { name: "🧁 Bake Something Together", cost: 150 },
+      { name: "🕹️ 30 Extra Min Screen Time", cost: 200 },
+      { name: "💰 $15 Cash", cost: 300 },
+    ];
+
+    const scriptures = [
+      { verse: "I can do all things through Christ who strengthens me.", reference: "Philippians 4:13" },
+      { verse: "Let all that you do be done in love.", reference: "1 Corinthians 16:14" },
+      { verse: "Be strong and courageous. Do not be afraid.", reference: "Joshua 1:9" },
+      { verse: "Trust in the LORD with all your heart.", reference: "Proverbs 3:5" },
+      { verse: "For God gave us a spirit not of fear but of power and love.", reference: "2 Timothy 1:7" },
+      { verse: "A joyful heart is good medicine.", reference: "Proverbs 17:22" },
+      { verse: "The fruit of the Spirit is love, joy, peace, kindness.", reference: "Galatians 5:22" },
+      { verse: "Every good and perfect gift is from above.", reference: "James 1:17" },
+      { verse: "The steadfast love of the LORD never ceases.", reference: "Lamentations 3:22" },
+      { verse: "She is clothed with strength and dignity.", reference: "Proverbs 31:25" },
+      { verse: "You are fearfully and wonderfully made.", reference: "Psalm 139:14" },
+      { verse: "Commit your way to the LORD; trust in him.", reference: "Psalm 37:5" },
+    ];
+
+    const affirmations = [
+      "I am kind, I am smart, and I am important.",
+      "Today, I choose joy and kindness.",
+      "I can handle anything this day brings.",
+      "I am a brilliant and brave girl.",
+      "I am proud of who I am.",
+      "My effort is enough, and I learn from mistakes.",
+      "I shine bright and make the world better.",
+      "I am loved just the way I am.",
+      "I have a voice and I use it for good.",
+      "I am ready to learn and grow today.",
+      "I am grateful for all the good things in my life.",
+      "I create my own happiness."
+    ];
+
+    const morningTasks = [
+      { id: 'm1', text: "Wake up on time", emoji: "⏰", points: 5 },
+      { id: 'm2', text: "Say morning prayer", emoji: "🙏", points: 5 },
+      { id: 'm3', text: "Make bed", emoji: "🛏️", points: 5 },
+      { id: 'm4', text: "Wash face", emoji: "💧", points: 5 },
+      { id: 'm5', text: "Style hair", emoji: "💇‍♀️", points: 5 },
+      { id: 'm6', text: "Get dressed", emoji: "👗", points: 5 },
+      { id: 'm7', text: "Eat breakfast", emoji: "🥣", points: 5 },
+      { id: 'm8', text: "Brush teeth", emoji: "🦷", points: 5 },
+      { id: 'm9', text: "Backpack ready", emoji: "🎒", points: 5, subtitle: "homework + Chromebook" },
+      { id: 'm10', text: "Shoes & socks", emoji: "👟", points: 5 },
+      { id: 'm11', text: "Hygiene", emoji: "✨", points: 10, subtitle: "⭐ Double points!" },
+      { id: 'm12', text: "Morning hugs", emoji: "🤗", points: 5 }
+    ];
+
+    const nightlyTasks = [
+      { id: 'n1', text: "Homework done", emoji: "✏️", points: 5 },
+      { id: 'n2', text: "Backpack packed", emoji: "🎒", points: 5 },
+      { id: 'n3', text: "Pick tomorrow's outfit", emoji: "👗", points: 5 },
+      { id: 'n4', text: "Shower/bath", emoji: "🛁", points: 5 },
+      { id: 'n5', text: "Brush teeth", emoji: "🦷", points: 5 },
+      { id: 'n6', text: "Wash face", emoji: "💧", points: 5 },
+      { id: 'n7', text: "Skincare routine", emoji: "✨", points: 5 },
+      { id: 'n8', text: "Room tidy", emoji: "🧹", points: 5 },
+      { id: 'n9', text: "Clothes in hamper", emoji: "👚", points: 5 },
+      { id: 'n10', text: "Reading time", emoji: "📚", points: 5 },
+      { id: 'n11', text: "Evening prayer", emoji: "🙏", points: 5 },
+      { id: 'n12', text: "In bed on time", emoji: "🌙", points: 5 },
+      { id: 'n13', text: "Goodnight hugs", emoji: "🤗", points: 5 }
+    ];
+
+    const MAX_MORNING_POINTS = 65;
+    const MAX_NIGHTLY_POINTS = 65;
+
+    // ===== STATE =====
+    let state = {
+      currentTab: 'morning',
+      selectedDate: new Date(),
+      calendarDate: new Date(),
+      allDays: {},
+      bankPoints: 0,
+      ledger: [],
+      enteredPin: '',
+      pinCallback: null,
+      selectedReward: null
+    };
+
+    // ===== HELPERS =====
+    function startOfDay(d) {
+      const date = new Date(d);
+      date.setHours(0, 0, 0, 0);
+      return date;
+    }
+
+    function dateKey(d) {
+      const date = startOfDay(d);
+      return `${date.getFullYear()}-${String(date.getMonth() + 1).padStart(2, '0')}-${String(date.getDate()).padStart(2, '0')}`;
+    }
+
+    function isToday(d) {
+      return startOfDay(d).getTime() === startOfDay(new Date()).getTime();
+    }
+
+    function getDayOfYear(d) {
+      const start = new Date(d.getFullYear(), 0, 0);
+      return Math.floor((d - start) / (1000 * 60 * 60 * 24));
+    }
+
+    function getWeekStart(d) {
+      const date = startOfDay(d);
+      date.setDate(date.getDate() - date.getDay());
+      return date;
+    }
+
+    // ===== STORAGE =====
+    function load() {
+      const saved = localStorage.getItem('avonlea_routines_v2');
+      if (saved) {
+        const data = JSON.parse(saved);
+        state.allDays = data.days || {};
+        state.bankPoints = data.bank || 0;
+        state.ledger = data.ledger || [];
+      }
+    }
+
+    function save() {
+      localStorage.setItem('avonlea_routines_v2', JSON.stringify({
+        days: state.allDays,
+        bank: state.bankPoints,
+        ledger: state.ledger
+      }));
+    }
+
+    function getDayData(d) {
+      const key = dateKey(d);
+      if (!state.allDays[key]) {
+        state.allDays[key] = {
+          morning: {
+            tasks: morningTasks.map(t => ({ ...t, completed: false })),
+            approved: false,
+            addedToBank: false,
+            points: 0
+          },
+          nightly: {
+            tasks: nightlyTasks.map(t => ({ ...t, completed: false })),
+            approved: false,
+            addedToBank: false,
+            points: 0
+          }
+        };
+      }
+      return state.allDays[key];
+    }
+
+    function getCurrentRoutine(d) {
+      return getDayData(d)[state.currentTab];
+    }
+
+    function saveDayData(d) {
+      const key = dateKey(d);
+      const day = getDayData(d);
+      day.morning.points = day.morning.tasks.filter(t => t.completed).reduce((s, t) => s + t.points, 0);
+      day.nightly.points = day.nightly.tasks.filter(t => t.completed).reduce((s, t) => s + t.points, 0);
+      state.allDays[key] = day;
+      save();
+    }
+
+    function getTotalDayPoints(d) {
+      const day = getDayData(d);
+      return (day.morning.points || 0) + (day.nightly.points || 0);
+    }
+
+    function addLedger(type, amount, desc) {
+      state.ledger.unshift({ date: Date.now(), type, amount, desc });
+      if (state.ledger.length > 50) state.ledger.pop();
+    }
+
+    // ===== INITIALIZATION =====
+    function init() {
+      state.selectedDate = startOfDay(new Date());
+      load();
+      createFloatingElements();
+      createFairyLights();
+      render();
+    }
+
+    function createFloatingElements() {
+      const container = document.getElementById('floatingElements');
+      const items = ['💕', '🦋', '✨', '💫', '🌸', '💖', '⭐'];
+      for (let i = 0; i < 15; i++) {
+        const el = document.createElement('div');
+        el.className = 'floating-sparkle';
+        el.textContent = items[Math.floor(Math.random() * items.length)];
+        el.style.left = Math.random() * 100 + '%';
+        el.style.animationDelay = Math.random() * 15 + 's';
+        el.style.animationDuration = (15 + Math.random() * 10) + 's';
+        el.style.fontSize = (0.7 + Math.random() * 0.8) + 'rem';
+        container.appendChild(el);
+      }
+    }
+
+    function createFairyLights() {
+      const container = document.getElementById('fairyLights');
+      const colors = ['#FFD700', '#FF69B4', '#87CEEB', '#98FB98', '#DDA0DD'];
+      for (let i = 0; i < 25; i++) {
+        const light = document.createElement('div');
+        light.className = 'fairy-light';
+        light.style.color = colors[Math.floor(Math.random() * colors.length)];
+        light.style.background = light.style.color;
+        light.style.animationDelay = (Math.random() * 2) + 's';
+        const side = Math.floor(Math.random() * 4);
+        switch(side) {
+          case 0: light.style.top = '-4px'; light.style.left = (Math.random() * 100) + '%'; break;
+          case 1: light.style.right = '-4px'; light.style.top = (Math.random() * 100) + '%'; break;
+          case 2: light.style.bottom = '-4px'; light.style.left = (Math.random() * 100) + '%'; break;
+          case 3: light.style.left = '-4px'; light.style.top = (Math.random() * 100) + '%'; break;
+        }
+        container.appendChild(light);
+      }
+    }
+
+    // ===== TAB SWITCHING =====
+    function switchTab(tab) {
+      state.currentTab = tab;
+      document.getElementById('morningTab').classList.toggle('active', tab === 'morning');
+      document.getElementById('nightlyTab').classList.toggle('active', tab === 'nightly');
+      
+      const taskSection = document.getElementById('taskSection');
+      taskSection.classList.toggle('night-mode', tab === 'nightly');
+      
+      document.getElementById('greeting').textContent = tab === 'morning' 
+        ? 'Good Morning, Avonlea!' 
+        : 'Good Night, Avonlea!';
+      
+      document.getElementById('resetLabel').textContent = tab === 'morning' ? 'Morning' : 'Nightly';
+      
+      render();
+    }
+
+    // ===== RENDERING =====
+    function render() {
+      const routine = getCurrentRoutine(state.selectedDate);
+      const dayOfYear = getDayOfYear(state.selectedDate);
+
+      // Date
+      document.getElementById('dateText').textContent = state.selectedDate.toLocaleDateString('en-US', {
+        weekday: 'short', month: 'short', day: 'numeric'
+      });
+
+      // History notice
+      const notice = document.getElementById('historyNotice');
+      if (!isToday(state.selectedDate)) {
+        notice.classList.add('show');
+        document.getElementById('viewingDate').textContent = state.selectedDate.toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
+      } else {
+        notice.classList.remove('show');
+      }
+
+      // Scripture & Affirmation (rotate daily)
+      const scripture = scriptures[dayOfYear % scriptures.length];
+      document.getElementById('scriptureText').textContent = `"${scripture.verse}"`;
+      document.getElementById('scriptureRef').textContent = `— ${scripture.reference}`;
+      document.getElementById('affirmationText').textContent = affirmations[dayOfYear % affirmations.length];
+
+      renderTasks();
+      updateProgress();
+      updateMomApproval();
+      updateBank();
+      renderWeekly();
+      updateStreak();
+    }
+
+    function renderTasks() {
+      const routine = getCurrentRoutine(state.selectedDate);
+      const locked = routine.addedToBank;
+      const list = document.getElementById('taskList');
+      list.innerHTML = '';
+
+      routine.tasks.forEach((task, i) => {
+        const div = document.createElement('div');
+        div.className = `task-item ${task.completed ? 'completed' : ''} ${locked ? 'disabled' : ''}`;
+        div.style.animationDelay = `${i * 0.04}s`;
+        
+        if (!locked) {
+          div.onclick = () => toggleTask(task.id);
+        }
+
+        div.innerHTML = `
+          <div class="task-checkbox">
+            <span class="task-emoji">${task.emoji}</span>
+            <span class="task-checkmark">✓</span>
+          </div>
+          <div class="task-content">
+            <div class="task-text">${task.text}</div>
+            ${task.subtitle ? `<div class="task-subtitle">${task.subtitle}</div>` : ''}
+          </div>
+          <div class="task-points">+${task.points}</div>
+        `;
+        list.appendChild(div);
+      });
+    }
+
+    function toggleTask(id) {
+      const routine = getCurrentRoutine(state.selectedDate);
+      if (routine.addedToBank) return;
+      
+      const task = routine.tasks.find(t => t.id === id);
+      if (task) {
+        task.completed = !task.completed;
+        saveDayData(state.selectedDate);
+        render();
+        
+        if (routine.tasks.every(t => t.completed) && task.completed) {
+          showCelebration();
+        }
+      }
+    }
+
+    function updateProgress() {
+      const routine = getCurrentRoutine(state.selectedDate);
+      const completed = routine.tasks.filter(t => t.completed).length;
+      const total = routine.tasks.length;
+      const points = routine.points;
+      const percent = (completed / total) * 100;
+
+      document.getElementById('progressLabel').textContent = `${completed} of ${total} complete`;
+      document.getElementById('todayPoints').textContent = points;
+      document.getElementById('progressFill').style.width = `${percent}%`;
+
+      const celebration = document.getElementById('celebration');
+      celebration.classList.toggle('show', completed === total && total > 0);
+    }
+
+    function updateMomApproval() {
+      const routine = getCurrentRoutine(state.selectedDate);
+      const section = document.getElementById('momApproval');
+      const title = document.getElementById('momTitle');
+      const btn = document.getElementById('momBtn');
+
+      if (routine.addedToBank) {
+        section.classList.add('approved');
+        title.textContent = `⭐ ${routine.points} pts added!`;
+        btn.disabled = true;
+      } else if (routine.points > 0 && isToday(state.selectedDate)) {
+        section.classList.remove('approved');
+        title.textContent = `⏳ ${routine.points} pts waiting for Mom`;
+        btn.disabled = false;
+      } else {
+        section.classList.remove('approved');
+        title.textContent = '⏳ Complete tasks to earn points!';
+        btn.disabled = true;
+      }
+    }
+
+    function updateBank() {
+      document.getElementById('bankPoints').textContent = state.bankPoints;
+      document.getElementById('bankDollars').textContent = ((state.bankPoints / 100) * 5).toFixed(2);
+
+      const canCashout = REWARDS.some(r => state.bankPoints >= r.cost);
+      const cashoutBtn = document.getElementById('cashoutBtn');
+      cashoutBtn.disabled = !canCashout;
+      cashoutBtn.classList.toggle('glow', canCashout);
+
+      const milestoneBar = document.getElementById('milestoneBar');
+      if (canCashout) {
+        milestoneBar.style.display = 'none';
+      } else {
+        milestoneBar.style.display = 'block';
+        const progress = state.bankPoints % 100;
+        const needed = 100 - progress;
+        document.getElementById('milestoneText').textContent = `${needed} pts to next reward!`;
+        document.getElementById('milestoneFill').style.width = `${progress}%`;
+      }
+    }
+
+    function renderWeekly() {
+      const weekStart = getWeekStart(state.selectedDate);
+      const labels = ['S', 'M', 'T', 'W', 'T', 'F', 'S'];
+      const container = document.getElementById('weeklyDays');
+      container.innerHTML = '';
+
+      let total = 0;
+      const maxDaily = MAX_MORNING_POINTS + MAX_NIGHTLY_POINTS;
+
+      for (let i = 0; i < 7; i++) {
+        const d = new Date(weekStart);
+        d.setDate(d.getDate() + i);
+        const pts = getTotalDayPoints(d);
+        total += pts;
+
+        const div = document.createElement('div');
+        div.className = 'weekly-day';
+
+        let circleClass = 'weekly-day-circle';
+        if (pts === maxDaily) circleClass += ' perfect';
+        else if (pts > 0) circleClass += ' has-points';
+        if (isToday(d)) circleClass += ' today';
+
+        div.innerHTML = `
+          <div class="weekly-day-label">${labels[i]}</div>
+          <div class="${circleClass}">${pts > 0 ? pts : '—'}</div>
+        `;
+        container.appendChild(div);
+      }
+
+      document.getElementById('weeklyTotal').textContent = total;
+    }
+
+    function updateStreak() {
+      let streak = 0;
+      let checkDate = startOfDay(new Date());
+      const maxDaily = MAX_MORNING_POINTS + MAX_NIGHTLY_POINTS;
+
+      if (getTotalDayPoints(checkDate) === maxDaily) {
+        streak = 1;
+        checkDate.setDate(checkDate.getDate() - 1);
+      } else {
+        checkDate.setDate(checkDate.getDate() - 1);
+      }
+
+      while (streak < 365) {
+        if (getTotalDayPoints(checkDate) === maxDaily) {
+          streak++;
+          checkDate.setDate(checkDate.getDate() - 1);
+        } else {
+          break;
+        }
+      }
+
+      const badge = document.getElementById('streakBadge');
+      if (streak >= 2) {
+        badge.classList.remove('hidden');
+        document.getElementById('streakCount').textContent = `${streak} Day Streak!`;
+      } else {
+        badge.classList.add('hidden');
+      }
+    }
+
+    // ===== ACTIONS =====
+    function requestMomApproval() {
+      const routine = getCurrentRoutine(state.selectedDate);
+      if (routine.addedToBank || routine.points === 0) return;
+      const label = state.currentTab === 'morning' ? 'Morning' : 'Nightly';
+      openPinModal(`🔐 Approve ${routine.points} ${label} pts?`, approveTasks);
+    }
+
+    function approveTasks() {
+      const routine = getCurrentRoutine(state.selectedDate);
+      if (routine.addedToBank) return;
+
+      const pts = routine.points;
+      routine.approved = true;
+      routine.addedToBank = true;
+      state.bankPoints += pts;
+
+      const label = state.currentTab === 'morning' ? 'Morning' : 'Nightly';
+      addLedger('add', pts, `${label} Routine (${state.selectedDate.toLocaleDateString('en-US', { month: 'short', day: 'numeric' })})`);
+      saveDayData(state.selectedDate);
+      render();
+      showCelebration();
+    }
+
+    function openCashoutModal() {
+      document.getElementById('cashoutBalance').textContent = state.bankPoints;
+      const container = document.getElementById('cashoutOptions');
+      container.innerHTML = '';
+      state.selectedReward = null;
+
+      REWARDS.forEach(reward => {
+        const canAfford = state.bankPoints >= reward.cost;
+        const div = document.createElement('div');
+        div.className = `cashout-option ${canAfford ? '' : 'disabled'}`;
+        div.innerHTML = `
+          <div>
+            <div class="cashout-name">${reward.name}</div>
+            <div class="cashout-cost">${reward.cost} pts</div>
+          </div>
+          <div>${canAfford ? '✨' : '🔒'}</div>
+        `;
+        if (canAfford) {
+          div.onclick = () => selectReward(div, reward);
+        }
+        container.appendChild(div);
+      });
+
+      document.getElementById('cashoutConfirmBtn').disabled = true;
+      document.getElementById('cashoutConfirmBtn').textContent = 'Select a reward';
+      document.getElementById('cashoutModal').classList.add('show');
+    }
+
+    function selectReward(el, reward) {
+      document.querySelectorAll('.cashout-option').forEach(e => e.classList.remove('selected'));
+      el.classList.add('selected');
+      state.selectedReward = reward;
+      document.getElementById('cashoutConfirmBtn').disabled = false;
+      document.getElementById('cashoutConfirmBtn').textContent = `Redeem ${reward.name}`;
+    }
+
+    function closeCashoutModal() {
+      document.getElementById('cashoutModal').classList.remove('show');
+      state.selectedReward = null;
+    }
+
+    function confirmCashout() {
+      if (!state.selectedReward) return;
+      closeCashoutModal();
+      openPinModal(`💰 Redeem ${state.selectedReward.cost} pts?`, processCashout);
+    }
+
+    function processCashout() {
+      if (!state.selectedReward || state.bankPoints < state.selectedReward.cost) return;
+      state.bankPoints -= state.selectedReward.cost;
+      addLedger('cashout', -state.selectedReward.cost, `Redeemed: ${state.selectedReward.name}`);
+      save();
+      render();
+      showCelebration();
+      state.selectedReward = null;
+    }
+
+    function requestResetBank() {
+      if (state.bankPoints === 0) {
+        alert('Bank is already empty!');
+        return;
+      }
+      openPinModal('🏦 Reset bank to 0?', resetBank);
+    }
+
+    function resetBank() {
+      addLedger('cashout', -state.bankPoints, 'Bank Reset');
+      state.bankPoints = 0;
+      save();
+      render();
+    }
+
+    function resetRoutine() {
+      const label = state.currentTab === 'morning' ? 'Morning' : 'Nightly';
+      openPinModal(`🔄 Reset ${label} routine?`, processResetRoutine);
+    }
+
+    function processResetRoutine() {
+      const routine = getCurrentRoutine(state.selectedDate);
+      const defaultList = state.currentTab === 'morning' ? morningTasks : nightlyTasks;
+      routine.tasks = defaultList.map(t => ({ ...t, completed: false }));
+      routine.approved = false;
+      routine.addedToBank = false;
+      routine.points = 0;
+      saveDayData(state.selectedDate);
+      render();
+    }
+
+    // ===== PIN MODAL =====
+    function openPinModal(title, callback) {
+      state.pinCallback = callback;
+      state.enteredPin = '';
+      updatePinDots();
+      document.getElementById('pinTitle').textContent = title;
+      document.getElementById('pinError').textContent = '';
+      document.getElementById('pinModal').classList.add('show');
+    }
+
+    function closePinModal() {
+      document.getElementById('pinModal').classList.remove('show');
+      state.pinCallback = null;
+      state.enteredPin = '';
+    }
+
+    function enterPin(digit) {
+      if (state.enteredPin.length < 4) {
+        state.enteredPin += digit;
+        updatePinDots();
+        if (state.enteredPin.length === 4) {
+          setTimeout(verifyPin, 200);
+        }
+      }
+    }
+
+    function clearPin() {
+      state.enteredPin = '';
+      updatePinDots();
+      document.getElementById('pinError').textContent = '';
+    }
+
+    function updatePinDots() {
+      for (let i = 1; i <= 4; i++) {
+        document.getElementById(`dot${i}`).classList.toggle('filled', i <= state.enteredPin.length);
+      }
+    }
+
+    function verifyPin() {
+      if (state.enteredPin === MOM_PIN) {
+        const callback = state.pinCallback;
+        closePinModal();
+        if (callback) callback();
+      } else {
+        document.getElementById('pinError').textContent = '❌ Wrong PIN!';
+        state.enteredPin = '';
+        updatePinDots();
+      }
+    }
+
+    // ===== CALENDAR =====
+    function openCalendar() {
+      state.calendarDate = new Date(state.selectedDate);
+      renderCalendar();
+      document.getElementById('calendarModal').classList.add('show');
+    }
+
+    function closeCalendar() {
+      document.getElementById('calendarModal').classList.remove('show');
+    }
+
+    function changeMonth(delta) {
+      state.calendarDate.setMonth(state.calendarDate.getMonth() + delta);
+      renderCalendar();
+    }
+
+    function renderCalendar() {
+      const year = state.calendarDate.getFullYear();
+      const month = state.calendarDate.getMonth();
+      const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+
+      document.getElementById('calendarTitle').textContent = `${months[month]} ${year}`;
+
+      const firstDay = new Date(year, month, 1).getDay();
+      const daysInMonth = new Date(year, month + 1, 0).getDate();
+      const daysInPrev = new Date(year, month, 0).getDate();
+
+      const container = document.getElementById('calendarDays');
+      container.innerHTML = '';
+      const today = startOfDay(new Date());
+
+      for (let i = firstDay - 1; i >= 0; i--) {
+        const btn = document.createElement('button');
+        btn.className = 'calendar-day other-month';
+        btn.textContent = daysInPrev - i;
+        const d = startOfDay(new Date(year, month - 1, daysInPrev - i));
+        btn.onclick = () => selectDate(d);
+        container.appendChild(btn);
+      }
+
+      for (let day = 1; day <= daysInMonth; day++) {
+        const btn = document.createElement('button');
+        btn.className = 'calendar-day';
+        btn.textContent = day;
+
+        const d = startOfDay(new Date(year, month, day));
+        const key = dateKey(d);
+
+        if (d.getTime() === today.getTime()) btn.classList.add('today');
+        if (d.getTime() === state.selectedDate.getTime()) btn.classList.add('selected');
+        if (getTotalDayPoints(d) > 0) btn.classList.add('has-data');
+
+        btn.onclick = () => selectDate(d);
+        container.appendChild(btn);
+      }
+
+      const total = firstDay + daysInMonth;
+      const remaining = total % 7 === 0 ? 0 : 7 - (total % 7);
+      for (let day = 1; day <= remaining; day++) {
+        const btn = document.createElement('button');
+        btn.className = 'calendar-day other-month';
+        btn.textContent = day;
+        const d = startOfDay(new Date(year, month + 1, day));
+        btn.onclick = () => selectDate(d);
+        container.appendChild(btn);
+      }
+    }
+
+    function selectDate(d) {
+      state.selectedDate = d;
+      render();
+      closeCalendar();
+    }
+
+    function goToToday() {
+      state.selectedDate = startOfDay(new Date());
+      render();
+    }
+
+    // ===== LEDGER =====
+    function openLedgerModal() {
+      renderLedger();
+      document.getElementById('ledgerModal').classList.add('show');
+    }
+
+    function closeLedgerModal() {
+      document.getElementById('ledgerModal').classList.remove('show');
+    }
+
+    function renderLedger() {
+      const list = document.getElementById('ledgerList');
+      list.innerHTML = '';
+
+      if (state.ledger.length === 0) {
+        list.innerHTML = '<li style="text-align: center; padding: 20px; color: #888;">No transactions yet!</li>';
+        return;
+      }
+
+      state.ledger.forEach(entry => {
+        const li = document.createElement('li');
+        li.className = `ledger-item ${entry.type}`;
+        const date = new Date(entry.date).toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
+        const amount = entry.type === 'add' ? `+${entry.amount}` : `${entry.amount}`;
+        
+        li.innerHTML = `
+          <div>
+            <div class="ledger-desc">${entry.desc}</div>
+            <div class="ledger-date">${date}</div>
+          </div>
+          <div class="ledger-amount">${amount} pts</div>
+        `;
+        list.appendChild(li);
+      });
+    }
+
+    // ===== CELEBRATION =====
+    function showCelebration() {
+      const container = document.getElementById('confetti');
+      container.innerHTML = '';
+      container.classList.add('show');
+
+      const colors = ['#FFD700', '#FF69B4', '#9D4EDD', '#87CEEB', '#98FB98', '#FFB6C1'];
+      for (let i = 0; i < 50; i++) {
+        const conf = document.createElement('div');
+        conf.className = 'confetti';
+        conf.style.left = Math.random() * 100 + '%';
+        conf.style.background = colors[Math.floor(Math.random() * colors.length)];
+        conf.style.animationDelay = Math.random() * 0.5 + 's';
+        conf.style.animationDuration = (2 + Math.random() * 2) + 's';
+        conf.style.width = (6 + Math.random() * 8) + 'px';
+        conf.style.height = conf.style.width;
+        conf.style.borderRadius = Math.random() > 0.5 ? '50%' : '2px';
+        container.appendChild(conf);
+      }
+
+      setTimeout(() => container.classList.remove('show'), 4000);
+    }
+
+    // Modal close on overlay click
+    document.querySelectorAll('.modal-overlay').forEach(overlay => {
+      overlay.addEventListener('click', e => {
+        if (e.target === overlay) overlay.classList.remove('show');
+      });
+    });
+
+    document.addEventListener('DOMContentLoaded', init);
+  </script>
+</body>
+</html>
